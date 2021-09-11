@@ -1,6 +1,6 @@
 #default target
-#.PHONE: default
-#default: youtube-dl ;
+.PHONE: default
+default: youtube-dl ;
 
 #compiler / -flags
 JC=javac

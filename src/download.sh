@@ -11,4 +11,4 @@ else
 fi
 
 #download song into /songs/ directory
-youtube-dl --extract-audio --audio-format mp3 -o $path'%(title)s.%(ext)s' $var
+youtube-dl --extract-audio --audio-format mp3 -o $path'%(title)s.%(ext)s' $input
