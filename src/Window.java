@@ -72,7 +72,7 @@ public class Window
 				}
 
 				//run download script
-				ProcessBuilder pb = new ProcessBuilder(pwd, link);
+				ProcessBuilder pb = new ProcessBuilder("sudo", pwd, link);
 
 				try {
 					pb.start();
@@ -80,6 +80,8 @@ public class Window
 				catch (IOException ev) {
 					ev.printStackTrace();
 				}
+
+				System.out.println("--");
 			}
 		});
 
