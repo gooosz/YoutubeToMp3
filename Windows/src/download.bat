@@ -1,8 +1,6 @@
 @echo off
 set input=%1
 set path="%cd%"
-shift
-shift
 
 if exist songs\ {
 	echo "Directory ok"
