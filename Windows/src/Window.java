@@ -17,32 +17,10 @@ public class Window
 	private JButton downloadButton;
 	private JButton clearButton;
 
-	private enum OS {WINDOWS, LINUX, MAC};
-
-	private OS os = null;
 	private String pwd = null;
 
 	public Window()
 	{
-		/*
-		 * os is contains one of the following
-		 * "win" 			-> Windows OS
-		 * "nix" / "nux" / "aix"	-> Linux OS
-		 * "mac" 			-> Mac OS
-		 */
-		String currentOperatingSystem = System.getProperty("os.name");
-		if (currentOperatingSystem.contains("win")) {
-			os = OS.WINDOWS;
-		}
-		else if (currentOperatingSystem.contains("nix") || currentOperatingSystem.contains("nux")
-			|| currentOperatingSystem.contains("aix")) {
-			os = OS.LINUX;
-		}
-		//TODO: implement everything for macintosh
-		else if (currentOperatingSystem.contains("mac")) {
-			os = OS.MAC;
-		}
-
 		frame = new JFrame("Window Test");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(640, 200);
@@ -69,15 +47,7 @@ public class Window
 				if (pwd == null)
 				{
 					//get pwd
-					ProcessBuilder pb;
-					if (os == OS.LINUX)
-					{
-						pb = new ProcessBuilder("pwd");
-					}
-					else if (os == OS.WINDOWS)
-					{
-						pb = new ProcessBuilder("echo %cd%");
-					}
+					ProcessBuilder pb = new ProcessBuilder("echo %cd%");
 
 					try
 					{
@@ -94,15 +64,7 @@ public class Window
 						}
 
 						pwd = builder.toString();
-
-						if (os == OS.LINUX)
-						{
-							pwd += "/src/download.sh";
-						}
-						else if (os == OS.WINDOWS)
-						{
-							pwd += "\src\download.sh";
-						}
+						pwd += "\src\download.sh";
 					}
 					catch (IOException ev)
 					{
@@ -111,7 +73,7 @@ public class Window
 				}
 
 				//run download script
-				ProcessBuilder pb = new ProcessBuilder("sudo", pwd, link);
+				ProcessBuilder pb = new ProcessBuilder(pwd, link);
 
 				try {
 					pb.start();
@@ -119,8 +81,6 @@ public class Window
 				catch (IOException ev) {
 					ev.printStackTrace();
 				}
-
-				System.out.println("--");
 			}
 		});
 
@@ -151,7 +111,6 @@ public class Window
 
 		//add Components to JFrame
 		frame.getContentPane().add(panel);
-		//frame.getContentPane().add(BorderLayout.SOUTH, downloadButton);
 
 		frame.setVisible(true);
 	}
