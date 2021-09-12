@@ -2,10 +2,10 @@
 
 ### Dependencies
 ---
-git
-make
-youtube-dl
-JVM
+git \
+make \
+youtube-dl \
+JVM \
 
 
 ## On Linux
