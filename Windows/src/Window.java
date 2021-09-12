@@ -64,7 +64,7 @@ public class Window
 						}
 
 						pwd = builder.toString();
-						pwd += "\src\download.sh";
+						pwd += "\src\download.bat";
 					}
 					catch (IOException ev)
 					{

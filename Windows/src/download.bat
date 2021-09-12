@@ -10,4 +10,4 @@ if exist songs\ {
 	md "songs"
 }
 
-youtube-dl --extract-audio --audio-format mp3 -o %path%'%(title)s.%(ext)s' %input%
+youtube-dl --extract-audio --audio-format mp3 -o %path%'%%(title)s.%%(ext)s' %input%
