@@ -5,7 +5,7 @@
 git \
 make \
 youtube-dl \
-JVM \
+JVM 
 
 
 ## On Linux
