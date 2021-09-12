@@ -23,7 +23,7 @@ compile everything using
 
 run the Main.class by either
 > java Main \
-or \
+< or \
 > make run \
 
 
