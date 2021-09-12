@@ -34,4 +34,4 @@ or
 -run the program \
 -copy the Video URL into the textfield \
 -click on Download \
--the mp3 will be stored in a subdirectory called "songs/" \
+-the mp3 will be stored in a subdirectory called "songs/"
