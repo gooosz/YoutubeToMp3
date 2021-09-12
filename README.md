@@ -24,7 +24,7 @@ compile everything using
 run the Main.class by either
 > java Main \
 or \
-> make run \
+> make run 
 
 
 
