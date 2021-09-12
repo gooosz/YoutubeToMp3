@@ -22,7 +22,7 @@ compile everything using
 > make all
 
 run the Main.class by either
-> java Main \
+> java Main
 
 or
 
