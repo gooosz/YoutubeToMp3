@@ -27,7 +27,7 @@ clean:
 #by writing 'make' in console
 
 #gives youtube-dl read, write and execute
-youtube-dl: install_youtube-dl
+youtube-dl: install_youtube-dl give_permission_to_script
 	sudo chmod a+rx /usr/local/bin/youtube-dl
 
 install_youtube-dl:
