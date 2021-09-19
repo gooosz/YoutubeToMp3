@@ -21,7 +21,7 @@ You will be prompted for your sudo password.
 compile everything using
 > make all
 
-run the Main.class by eithe
+run the Main.class by either
 > java Main
 
 or
