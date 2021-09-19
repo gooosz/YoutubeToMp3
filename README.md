@@ -1,6 +1,6 @@
 # YoutubeToMp3
 
-![](https://github.com/gooosz/YoutubeToMp3/blob/main/Screenshot.png?raw=true)
+
 
 
 ### Dependencies
