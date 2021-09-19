@@ -33,6 +33,9 @@ public class Window
 
 	private String pwd = null;
 
+	//store previous downloaded file name
+	private String prevDownloaded;
+
 	public Window()
 	{
 		frame = new JFrame("Window Test");
@@ -95,7 +98,25 @@ public class Window
 				ProcessBuilder pb = new ProcessBuilder("sudo", pwd, link);
 
 				try {
-					pb.start();
+					Process process = pb.start();
+
+					//store output in string prevDownloaded
+					BufferedReader reader = new BufferedReader(
+									new InputStreamReader(
+										process.getInputStream()
+									));
+					String filename = "";
+					while ((prevDownloaded = reader.readLine()) != null)
+					{
+						/*
+						 * get only the last line
+						 * aka loop through the output
+						 * until there is no more output
+						 */
+						 filename = prevDownloaded;
+					}
+					prevDownloaded = filename;
+					prevDownloaded += ".mp3";
 				}
 				catch (IOException ev) {
 					ev.printStackTrace();
@@ -130,7 +151,14 @@ public class Window
 
 		shareButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//download the song first
 				downloadButton.doClick();
+
+				//get downloaded file name
+
+
+				//send to connected device using shareKdeConnect.sh
+
 			}
 		});
 
