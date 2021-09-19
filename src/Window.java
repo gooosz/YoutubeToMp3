@@ -187,6 +187,8 @@ public class Window
 				{
 					ev.printStackTrace();
 				}
+
+				//TODO: remove songs, so that they will be only saved on mobile
 			}
 		});
 
