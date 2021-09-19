@@ -163,9 +163,9 @@ public class Window
 					 */
 					pwd = pwd.substring(0, pwd.length()-16);
 				}
-				pwd += "/src/shareKdeConnect.sh";
+				pwd += "/src/kdesend.sh";
 
-				ProcessBuilder pb = new ProcessBuilder("sudo", pwd, prevDownloaded);
+				ProcessBuilder pb = new ProcessBuilder(pwd, prevDownloaded);
 
 				try
 				{
