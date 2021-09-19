@@ -33,7 +33,7 @@ or
 
 You can even share the song with your Phone using KDEConnect. \
 Just paste the link and click on Share and the song will be stored \
-on your Desktop as well as on your Mobile, \
+on your Desktop as well as on your Mobile,
 if you are connected via KDEConnect.
 
 # How to convert a Youtube video to mp3
