@@ -24,6 +24,12 @@ public class Window
 	private JButton downloadButton;
 	private JButton clearButton;
 	private JButton pasteButton;
+	/*
+	 * first download file
+	 * share file to connected device
+	 * using shareKdeConnect.sh script
+	 */
+	private JButton shareButton;
 
 	private String pwd = null;
 
@@ -49,6 +55,8 @@ public class Window
 
 		//paste system Clipboard into TextField
 		pasteButton = new JButton("Paste");
+
+		shareButton = new JButton("Share");
 
 		//add actionListener for important buttons
 		downloadButton.addActionListener(new ActionListener() {
@@ -120,6 +128,12 @@ public class Window
 			}
 		});
 
+		shareButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				downloadButton.doClick();
+			}
+		});
+
 		//Layout
 		JPanel titelRow = new JPanel();
 		titelRow.add(label);
@@ -129,9 +143,13 @@ public class Window
 		textFieldRow.add(clearButton, BorderLayout.WEST);
 		textFieldRow.add(pasteButton, BorderLayout.SOUTH);
 
+		JPanel centeredStuff = new JPanel();
+		centeredStuff.add(textFieldRow, BorderLayout.NORTH);
+		centeredStuff.add(shareButton, BorderLayout.SOUTH);
+
 		//add everything to JPanel
 		panel.add(titelRow, BorderLayout.NORTH);
-		panel.add(textFieldRow);
+		panel.add(centeredStuff);
 		panel.add(downloadButton, BorderLayout.SOUTH);
 
 
