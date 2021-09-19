@@ -28,7 +28,12 @@ or
 
 > make run
 
+## If you're using KDE
+---
 
+You can even share the downloaded Songs with your Phone using KDEConnect. \
+Just paste the link and click on Share and the Song will be stored on your Desktop as well as \
+on your Mobile, if you are connected via KDEConnect.
 
 # How to convert a Youtube video to mp3
 -run the program \

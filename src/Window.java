@@ -66,7 +66,7 @@ public class Window
 			public void actionPerformed(ActionEvent e) {
 				String link = linkTextField.getText();
 
-				if (pwd == null)
+				if (pwd == null || !pwd.endsWith("/src/download.sh"))
 				{
 					//get pwd
 					ProcessBuilder pb = new ProcessBuilder("pwd");
@@ -154,11 +154,39 @@ public class Window
 				//download the song first
 				downloadButton.doClick();
 
-				//get downloaded file name
-
-
 				//send to connected device using shareKdeConnect.sh
+				if (pwd.endsWith("/src/download.sh"))
+				{
+					/*
+					 * 16 is the length of the string that has to change
+					 * to shareKdeConnect.sh
+					 */
+					pwd = pwd.substring(0, pwd.length()-16);
+				}
+				pwd += "/src/shareKdeConnect.sh";
 
+				ProcessBuilder pb = new ProcessBuilder("sudo", pwd, prevDownloaded);
+
+				try
+				{
+					Process process = pb.start();
+
+					//print output of process
+					BufferedReader br = new BufferedReader(
+									new InputStreamReader(
+										process.getInputStream()
+									));
+					String line = null;
+					while ((line = br.readLine()) != null)
+					{
+						System.out.println(line);
+					}
+
+				}
+				catch (IOException ev)
+				{
+					ev.printStackTrace();
+				}
 			}
 		});
 

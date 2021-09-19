@@ -6,7 +6,6 @@ default: youtube-dl ;
 JC=javac
 JFLAGS=-g -d ./
 
-
 run: all
 	java Main
 
