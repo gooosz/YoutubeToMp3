@@ -38,7 +38,7 @@ public class Window
 
 	public Window()
 	{
-		frame = new JFrame("Window Test");
+		frame = new JFrame("YoutubeToMp3");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(640, 200);
 
