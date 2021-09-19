@@ -143,15 +143,14 @@ public class Window
 		textFieldRow.add(clearButton, BorderLayout.WEST);
 		textFieldRow.add(pasteButton, BorderLayout.SOUTH);
 
-		JPanel centeredStuff = new JPanel();
-		centeredStuff.add(textFieldRow, BorderLayout.NORTH);
-		centeredStuff.add(shareButton, BorderLayout.SOUTH);
+		JPanel southStuff = new JPanel();
+		southStuff.add(shareButton, BorderLayout.EAST);
+		southStuff.add(downloadButton, BorderLayout.WEST);
 
 		//add everything to JPanel
 		panel.add(titelRow, BorderLayout.NORTH);
-		panel.add(centeredStuff);
-		panel.add(downloadButton, BorderLayout.SOUTH);
-
+		panel.add(textFieldRow);
+		panel.add(southStuff, BorderLayout.SOUTH);
 
 		panel.setPreferredSize(new Dimension(480, 360));
 		panel.setMaximumSize(panel.getPreferredSize());
