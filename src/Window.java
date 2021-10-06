@@ -95,7 +95,7 @@ public class Window
 				}
 
 				//run download script
-				ProcessBuilder pb = new ProcessBuilder("sudo", pwd, link);
+				ProcessBuilder pb = new ProcessBuilder(pwd, link);
 
 				try {
 					Process process = pb.start();
